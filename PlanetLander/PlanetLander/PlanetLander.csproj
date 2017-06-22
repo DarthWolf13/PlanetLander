@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lander.cs" />
+    <Compile Include="Meteor.cs" />
     <Compile Include="Mountains.cs" />
     <Compile Include="PlayingState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
