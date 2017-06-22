@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,40 @@ namespace PlanetLander
             this.position = new Vector2(450, 150);
             this.Degrees = 270;
             this.velocity = Vector2.Zero;
+        }
+
+        public override void HandleInput(InputHelper inputHelper)
+        {
+            base.HandleInput(inputHelper);
+
+            if (inputHelper.IsKeyDown(Keys.Left))
+            {
+                this.Degrees -= 1;
+            }
+            if (inputHelper.IsKeyDown(Keys.Right))
+            {
+                this.Degrees += 1;
+            }
+            if (inputHelper.IsKeyDown(Keys.Up))
+            {
+                this.velocity += this.AngularDirection * 2;
+            }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            this.velocity += new Vector2(0, 1);
+
+            if(this.position.X - this.Width < 0)
+            {
+                this.position.X = 0 + this.Width;
+            }
+            if (this.position.X + this.Width > PlanetLander.Screen.X)
+            {
+                this.position.X = PlanetLander.Screen.X - this.Width;
+            }
         }
     }
 }
