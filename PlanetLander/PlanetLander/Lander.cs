@@ -53,11 +53,11 @@ namespace PlanetLander
 
             this.velocity += new Vector2(0, 1);
 
-            if(this.position.X - this.Width < 0)
+            if(this.position.X < 0)
             {
                 this.position.X = 0 + this.Width;
             }
-            if (this.position.X + this.Width > PlanetLander.Screen.X)
+            if (this.position.X > PlanetLander.Screen.X)
             {
                 this.position.X = PlanetLander.Screen.X - this.Width;
             }
