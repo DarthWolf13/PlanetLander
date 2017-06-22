@@ -12,7 +12,8 @@ namespace PlanetLander
         Mountains mountains;
         Lander lander;
         GameObjectList meteors;
-        public Fuel fuel;
+        Fuel fuel;
+        Platform platform;
 
         public PlayingState()
         {
@@ -20,12 +21,14 @@ namespace PlanetLander
             lander = new Lander();
             meteors = new GameObjectList();
             fuel = new Fuel();
+            platform = new Platform();
 
             this.Add(new SpriteGameObject("spr_background"));
             this.Add(mountains);
             this.Add(lander);
             this.Add(meteors);
             this.Add(fuel);
+            this.Add(platform);
 
             for(int i = 0; i < 5; i++)
             {

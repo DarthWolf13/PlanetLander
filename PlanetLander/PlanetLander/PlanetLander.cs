@@ -35,6 +35,7 @@ namespace PlanetLander
 
             // TODO: use this.Content to load your game content here
             gameStateManager.AddGameState("PlayingState", new PlayingState());
+            gameStateManager.AddGameState("WinState", new WinState());
             gameStateManager.SwitchTo("PlayingState");
         }      
     }

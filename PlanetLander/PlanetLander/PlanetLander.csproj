@@ -76,11 +76,13 @@
     <Compile Include="Lander.cs" />
     <Compile Include="Meteor.cs" />
     <Compile Include="Mountains.cs" />
+    <Compile Include="Platform.cs" />
     <Compile Include="PlayingState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PlanetLander.cs" />
     <Compile Include="RotatingSpriteGameObject.cs" />
+    <Compile Include="WinState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
