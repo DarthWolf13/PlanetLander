@@ -53,6 +53,19 @@ namespace PlanetLander
             {
                 fuel.fuelValue = 0;
             }
+
+            if (lander.CollidesWith(mountains))
+            {
+                lander.Reset();
+            }
+
+            foreach(Meteor meteor in meteors.Objects)
+            {
+                if (lander.CollidesWith(meteor))
+                {
+                    lander.Reset();
+                }
+            }
         }
     }
 }

@@ -25,6 +25,7 @@ namespace PlanetLander
             this.position = new Vector2(450, 150);
             this.Degrees = 270;
             this.velocity = Vector2.Zero;
+            Fuel = 500;
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -59,6 +60,10 @@ namespace PlanetLander
             if (this.position.X + this.Width > PlanetLander.Screen.X)
             {
                 this.position.X = PlanetLander.Screen.X - this.Width;
+            }
+            if (this.position.Y + this.Height < 0 || this.position.Y - this.Height > PlanetLander.Screen.Y)
+            {
+                this.Reset();
             }
         }
     }
