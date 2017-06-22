@@ -9,6 +9,8 @@ namespace PlanetLander
 {
     class Lander : RotatingSpriteGameObject
     {
+        int Fuel = 500;
+
         public Lander() : base("spr_lander")
         {
             this.origin = sprite.Center;
@@ -37,9 +39,10 @@ namespace PlanetLander
             {
                 this.Degrees += 1;
             }
-            if (inputHelper.IsKeyDown(Keys.Up))
+            if (inputHelper.IsKeyDown(Keys.Up) && Fuel > 0)
             {
                 this.velocity += this.AngularDirection * 2;
+                Fuel--;
             }
         }
 
