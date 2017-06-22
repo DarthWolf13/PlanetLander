@@ -12,7 +12,7 @@ namespace PlanetLander
         Mountains mountains;
         Lander lander;
         GameObjectList meteors;
-        Fuel fuel;
+        public Fuel fuel;
         Platform platform;
 
         public PlayingState()
@@ -60,6 +60,7 @@ namespace PlanetLander
             if (lander.CollidesWith(mountains))
             {
                 lander.Reset();
+                fuel.fuelValue = 500;
             }
 
             foreach(Meteor meteor in meteors.Objects)
@@ -67,7 +68,18 @@ namespace PlanetLander
                 if (lander.CollidesWith(meteor))
                 {
                     lander.Reset();
+                    fuel.fuelValue = 500;
                 }
+            }
+
+            if (lander.CollidesWith(platform) && lander.Degrees >= 260 && lander.Degrees <= 280 && lander.Velocity.Length() < 50)
+            {
+                PlanetLander.GameStateManager.SwitchTo("WinState");
+            }
+            else if (lander.CollidesWith(platform))
+            {
+                lander.Reset();
+                fuel.fuelValue = 500;
             }
         }
     }
