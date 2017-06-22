@@ -9,7 +9,7 @@ namespace PlanetLander
     {
         public PlayingState()
         {
-
+            this.Add(new SpriteGameObject("spr_background"));
         }
     }
 }

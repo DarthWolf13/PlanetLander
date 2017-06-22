@@ -34,7 +34,8 @@ namespace PlanetLander
             SetFullScreen(false);
 
             // TODO: use this.Content to load your game content here
-
+            gameStateManager.AddGameState("PlayingState", new PlayingState());
+            gameStateManager.SwitchTo("PlayingState");
         }      
     }
 }
