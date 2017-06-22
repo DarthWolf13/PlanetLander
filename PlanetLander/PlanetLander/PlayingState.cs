@@ -8,13 +8,16 @@ namespace PlanetLander
     class PlayingState : GameObjectList
     {
         Mountains mountains;
+        Lander lander;
 
         public PlayingState()
         {
             mountains = new Mountains();
+            lander = new Lander();
 
             this.Add(new SpriteGameObject("spr_background"));
             this.Add(mountains);
+            this.Add(lander);
         }
     }
 }
